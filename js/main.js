@@ -4,14 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const search = document.querySelector('.search');
     const cartBtn = document.getElementById('cart');
     const wishlistBtn = document.getElementById('wishlist');
-
     const goodsWrapper = document.querySelector('.goods-wrapper');
+    const cart = document.querySelector('.cart');
 
 
     const createCardGoods = (id, title, price, img) => {
         const card = document.createElement('div');
         card.className = 'card-wrapper col-12 col-md-6 col-lg-4 col-xl-3 pb-3';
-
         card.innerHTML = `
             <div class="card">
                 <div class="card-img-wrapper">
@@ -34,8 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
     goodsWrapper.append(createCardGoods(1, 'Дартс', '200', 'img/temp/Archer.jpg'));
     goodsWrapper.append(createCardGoods(1, 'Дартс', '300', 'img/temp/Archer.jpg'));
 
-    
+     
+   const openCart = () => {
 
+   };
+
+
+   cartBtn.addEventListener('click', openCart);
 
 
 
