@@ -35,19 +35,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
    const  closeCart = e => {
        const tar = e.target;
-
        if(tar === cart || tar.classList.contains('cart-close')){
            cart.style.display = '';
        }
-
    }
-   const openCart = () => {
+
+   const openCart = e => {
+       e.preventDefault();
        cart.style.display = 'flex';
    };
 
-
    cartBtn.addEventListener('click', openCart);
    cart.addEventListener('click', closeCart);
+
+   document.addEventListener('keyup', closeCart);
 
 
 
