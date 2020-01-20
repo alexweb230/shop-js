@@ -33,13 +33,21 @@ document.addEventListener('DOMContentLoaded', () => {
     goodsWrapper.append(createCardGoods(1, 'Дартс', '200', 'img/temp/Archer.jpg'));
     goodsWrapper.append(createCardGoods(1, 'Дартс', '300', 'img/temp/Archer.jpg'));
 
-     
-   const openCart = () => {
+   const  closeCart = e => {
+       const tar = e.target;
 
+       if(tar === cart || tar.classList.contains('cart-close')){
+           cart.style.display = '';
+       }
+
+   }
+   const openCart = () => {
+       cart.style.display = 'flex';
    };
 
 
    cartBtn.addEventListener('click', openCart);
+   cart.addEventListener('click', closeCart);
 
 
 
