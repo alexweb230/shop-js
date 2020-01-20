@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const cart = document.querySelector('.cart');
 
 
-    const db = fetch('db/db.json');
-    db.then(response => response.json())
+    fetch('db/db.json')
+        .then(response => response.json())
         .then(data => data.forEach(d => console.log(d.title)));
 
 
