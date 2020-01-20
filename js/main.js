@@ -8,9 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const cart = document.querySelector('.cart');
 
 
-    fetch('db/db.json')
-        .then(response => response.json())
-        .then(data => data.forEach(d => console.log(d.title)));
+    const getGoots = () => {
+        fetch('db/db.json')
+            .then(response => response.json())
+            .then(data => data.forEach(d => console.log(d.title)));
+    }
+
+
 
 
     const createCardGoods = (id, title, price, img) => {
