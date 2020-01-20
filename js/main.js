@@ -33,31 +33,23 @@ document.addEventListener('DOMContentLoaded', () => {
     goodsWrapper.append(createCardGoods(1, 'Дартс', '200', 'img/temp/Archer.jpg'));
     goodsWrapper.append(createCardGoods(1, 'Дартс', '300', 'img/temp/Archer.jpg'));
 
-   const  closeCart = e => {
-       const tar = e.target;
-       if(tar === cart || tar.classList.contains('cart-close')){
-           cart.style.display = '';
-       }
-       if(e.key === 'Escape'){
-           cart.style.display = '';
-       }
-   }
+    const closeCart = e => {
+        const tar = e.target;
+        if (tar === cart || tar.classList.contains('cart-close') || e.key === 'Escape') {
+            cart.style.display = '';
+            document.removeEventListener('keyup', closeCart);
+        }
+    }
 
 
+    const openCart = e => {
+        e.preventDefault();
+        cart.style.display = 'flex';
+        document.addEventListener('keyup', closeCart);
+    };
 
-   const openCart = e => {
-       e.preventDefault();
-       cart.style.display = 'flex';
-   };
-
-   cartBtn.addEventListener('click', openCart);
-   cart.addEventListener('click', closeCart);
-   document.addEventListener('keyup', closeCart);
-
-
-
-
-
+    cartBtn.addEventListener('click', openCart);
+    cart.addEventListener('click', closeCart);
 
 
 });
