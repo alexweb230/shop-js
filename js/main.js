@@ -38,7 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
        if(tar === cart || tar.classList.contains('cart-close')){
            cart.style.display = '';
        }
+       if(e.key === 'Escape'){
+           cart.style.display = '';
+       }
    }
+
+
 
    const openCart = e => {
        e.preventDefault();
@@ -47,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
    cartBtn.addEventListener('click', openCart);
    cart.addEventListener('click', closeCart);
-
    document.addEventListener('keyup', closeCart);
 
 
