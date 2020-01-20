@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(data => data.forEach(d => console.log(d.title)));
     }
 
+    getGoots();
 
 
 
