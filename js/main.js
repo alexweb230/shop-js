@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     const db = fetch('db/db.json');
-    console.log(db);
+    db.then(response => response.json())
+        .then(data => data.forEach(d => console.log(d.title)));
 
 
     const createCardGoods = (id, title, price, img) => {
